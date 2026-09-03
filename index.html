@@ -613,28 +613,36 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
 
 /* 좌: 텍스트 */
 .ses-left {
-  font-size: 14px;
+  font-size: 15px;
   color: #222;
-  line-height: 1.8;
+  line-height: 1.9;
   min-width: 180px;
   flex-shrink: 0;
+  text-align: center;
+  border-left: 4px solid #1a4fa0;
+  border-right: 4px solid #1a4fa0;
+  padding: 12px 20px;
+  font-style: italic;
 }
 .ses-left strong {
   font-weight: 900;
   color: #1a4fa0;
+  font-style: normal;
 }
 
 /* 우: 아이콘 4개 */
 .ses-icons {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
   align-items: center;
-  flex-wrap: wrap;
+  flex: 1;
 }
 .ses-icon-item {
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: flex-start;
 }
 .ses-icon-circle {
   width: 52px; height: 52px;
