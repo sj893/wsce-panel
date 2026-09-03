@@ -557,6 +557,105 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
   margin-top: 8px; text-align: right;
 }
 
+
+/* ── Smart Energy Safety 섹션 ── */
+.ses-section {
+  margin-top: 80px;
+}
+
+/* 헤더: 제목 + 구분선 + hei 로고 */
+.ses-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.ses-title {
+  font-size: clamp(24px, 4.5vw, 44px);
+  font-weight: 900;
+  color: #1a4fa0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+.ses-line {
+  flex: 1;
+  height: 2px;
+  background: #1a4fa0;
+}
+.ses-hei-logo {
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* 설명 */
+.ses-desc {
+  font-size: 14px;
+  color: #222;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+.ses-desc strong {
+  font-weight: 900;
+  color: #1a4fa0;
+}
+
+/* 하단: 좌측 텍스트 + 우측 아이콘 4개 */
+.ses-body {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+@media(max-width: 640px) {
+  .ses-body { flex-direction: column; align-items: flex-start; }
+}
+
+/* 좌: 텍스트 */
+.ses-left {
+  font-size: 14px;
+  color: #222;
+  line-height: 1.8;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+.ses-left strong {
+  font-weight: 900;
+  color: #1a4fa0;
+}
+
+/* 우: 아이콘 4개 */
+.ses-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ses-icon-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ses-icon-circle {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: #1a4fa0;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  padding: 12px;
+}
+.ses-icon-circle img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+.ses-icon-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a3a6e;
+  white-space: nowrap;
+}
+
 /* ── 섹션 제목 ── */
 .section-label {
   font-size: clamp(24px, 4vw, 38px);
@@ -992,6 +1091,50 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
     </div>
   </div>
 
+  <!-- Smart Energy Safety 헤더 섹션 -->
+  <div class="ses-section">
+
+    <!-- 헤더: 제목 + 선 + hei -->
+    <div class="ses-header">
+      <div class="ses-title">Smart Energy Safety</div>
+      <div class="ses-line"></div>
+      <img class="ses-hei-logo" src="data:image/png;base64,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" alt="hei">
+    </div>
+
+    <!-- 설명 -->
+    <p class="ses-desc" data-i18n="ses_desc">
+      <strong>AI</strong> 기반 고정밀 배터리 진단 기술로 전기차 충전부터 건물 에너지장치(ESS)까지, 화재 위험 없이 더 안전하고 스마트한 친환경 라이프를 완성합니다
+    </p>
+
+    <!-- 하단: 좌측 텍스트 + 우측 아이콘 -->
+    <div class="ses-body">
+      <div class="ses-left" data-i18n="ses_left">
+        충전 데이터 패턴을 <strong>AI로 분석</strong><br>
+        배터리 내부 상태와<br>
+        열화 징후를 <strong>조기 진단</strong>
+      </div>
+      <div class="ses-icons">
+        <div class="ses-icon-item">
+          <div class="ses-icon-circle"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH8AAABtCAYAAACIo76DAAAACXBIWXMAAAsSAAALEgHS3X78AAAEE0lEQVR4nO2d0XXaMBSGv+T0Pd4g3qBsAJ2g6QR1Jmg6QdMNkglKN6ATFDZIJiiZoDCB+3DtEyDYhmJk2ff/XjhYNtI5n5At6Uq+yPOcHUbADTDZTRC9ZQnMgRmwKg9ebMhPgHvgS9hyiYCsgQyrBFvyZ8DHbsokAvMJmJXyM+BHp8URIVkDaSl/CVx3WhwRmq+X2L1e4v0xucSe7oU/ksuuSyC6Q/Id8+6Ic5/ZGCAQUTMCrppOOkb+HTZKJOJnDoybTlKz7xjJd4zkO0byHSP5jpF8x0i+YyTfMZLvmGNG+PpGisUiJsATReiSeGWo8jPeRia9YJXhKXhpImWIzf4N+0PSrrEx7yRoaSJmiPLva9KusFZBMEz57xvSz/3PT7A1D9G3MEOU3xUJdlv5C/wuPufYg2eUSH47lD2K3Tn0MRE/Z0h+O9xRHQF9XaRHh+S3w+TE9E4Yaj//FFKsx5AW35fAAwMcH5D8bUbYPXoz+HGMjR3cMLAYRjX728zYH/V6BUzDFuX8SP4rI+qXrV0T6b37f5H8V6Lsjp0TyXdM7A98E6yPXP4rn7Anca0caoGY5We8nZ0bF8dHWBdMnECszX6C9a33cVWTJo4gVvk31C801N5BLRCr/PSAc7SpxInEKv8Q3HXN2qbP8sWJSL5jJN8xku8YyXeM5DtG8h0j+Y6RfMdIvmMk3zGS7xjJd4zkO0byHSP5jpF8x0i+Y/osf9l1AfpOrPKblkOvqZb/0nBt1YKPqt9r49ooF5nEKn9GvcRpTVpdTP+a6s0Yl8Ci5toF1ZWyrjxNZeqMWOWDxe6v9xxfUL/d2gPwc8/xNbb0a9mQ5/Oe489FWhVz4LYi7ZZI1/XHvFzrCYvfz9heq3fINqoZ9m+cFN9XxXXLhutW2HqAjO2dOaYH5DnFJGc7x5ry7IyLPM8n2NZhTXwg0hos3jCn+e1ai5ibfXFmJN8xku8YyXeM5DtG8h0j+Y6RfMdIvmOOGd7NGNgOlAMmPeSkY+R//r9yiFhRs+8YyXfMJRFPOYrzUsrfFzQhhs28bPajDDMSZ2W6Kb8p8FEMh0dgWcpfUR2/JobFI8Wr3i7yPN9MSLDBnIzm15KK/rDGQrse2AjF25XfV+6Bb4Hz7H1Mo/r5jpF8x0i+YyTfMZLvGMl3jOQ7RvIdI/mOkXzHSL5jJN8xXe7MkWDTyGkLvzVp4TeOJWsp3xnNG1Cdha5m9TJserHufbmeWGBz7EErQRfyM96+Gl3YnHvQV8OHlp8Cf0Jm2DMWBLyFhX7guwucX98Y084z0EGElq/XnjeThspIXT3HhJYf5R60Xgkt/5DdMz1TRtkGIbT8KVobUMd9yMy6uOdPUAXYxyOBl811IX+FVYDvqBIA/MLWAATvBv8DyV2paPasWU0AAAAASUVORK5CYII=" alt=""></div>
+          <span class="ses-icon-label" data-i18n="ses_c1">추가 장비 불필요</span>
+        </div>
+        <div class="ses-icon-item">
+          <div class="ses-icon-circle"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAABtCAYAAABAz1RVAAAACXBIWXMAAAsSAAALEgHS3X78AAAFZ0lEQVR4nO2dTW7bRhhAn40A3RSoltnJAbqPcgKzqy6jnsD0CZIb2DlB5BOYOUHlrrorfYI6N6BPUGnZbqaLT2wFhhxK5gxH33AeQMAAyeFYj5w/fpw5M8YwkB+B74cm4oGn0BnwyauB56+B9y4y4oEtkBGpwPMB595yutIAfkBurCgZIm7pLBf+mCNPXXQMEXfhKhOJ4xkirnSVCc+kOq5B6SoTHvkKbEJnwgdDWpVlz/6xfrQF0hBpoxzh+kE4RNwCqeBnLfv+Br7rOG8FFC/K1XHYOqKvkdZvkxLtUo0xXVtujKnMy/nNkrarLRuQv40xpjDGXIyQT+fbmfl25GSBPClvB94T/9D9NLrid+DngWlsgY+MUzo4oylugRQhXXXGsbwBKkdptfEX7UX4S/gC5I7S8s5+q9K1NPDf+XUlDeAKefJUsC+uwK008CvOR9qfkRv45KnF5Qyv09rIPKTpO+2Vp3SdUtdxFTKu18UWGbCtWvbNgA+Wc33Vc09032yPdDf3c+z/K8A7Tn3ExRiz6Gk2Px3QZB7SbfBBZuz5LXrOX/WcH3w7x16mb5G3AFWP/9LRfeSKsmd/DjxY9p98PXeOfZS/q3hsO+5UsAnZx1aXqRBnozownTUyNnkKHNq4KC37XLeunTPk7UCTHClaQ3LH6RXbXnAp7glpoj87TPMYPqGoAz0Ul+JA5C2QH3EMgVtkqOod7W8BomVolFcbG+RHvPWQdmKH6ycuMRJJnFKSOKUkcUqZuriulu+pDCZ0MnVxXf2+k+8P+ugOaGIN/IKM+syQrswKBaMvUxcHIu+UBskPYupFpVqSOKUkcUpJ4pSSxCkliVNKEqeU2PtxS+TF7gK34eq+eNptJT3xPjGKmyFDVh9REPTT4HLv7wfkZXRrYG5sRWWG3Kk36JPW5D3wJx2RBDGJy4E/0C+syQ0t3+7FIi4D7kNnwiNXNOTFIG6GwkHiF3DF3qRAMYjT2Ah5Kf9FacfQqux76fmMFDOl95wM4wKppy8tx8yRp26tXdwS+9P2BRGrZZKaApFnq6+XwFp7UWn7quYZXdJqCiQSvIsM9NdxNnEF+qTVFJZ9c9AvzjaMVY6VCQ9UfQdoFzdZkjilJHFKSeKUksQpJYlTShKnlCROKUmcUpI4pSRxStH+WscFM/7/Ps43axxNpzh1cT6mM7ZxA1zjYOLuqReVK8YPe7jHwbpEUxdnCxPwSTY0gamLC8Xg+nTq4h4DXXdwOOHUxeWMP03jNQ4mF596q7JCWpZL/C9kuOHwqZJ7mbo4kB+0CJ2JY5l6UamWJE4pSZxSkjil9InLx8hE4njOsUf8zlHY4poCtTjbQg9Xu2OW6Ji5YBLURWXfsiaXwK/I0pbG8Vax96VlAG6Rvpzr/6ttK3F08++LC7W8yhy5KbIA175l3BkaLnH0MUotbkP4hkiI6XRDXPMtDkqY/VblGhkADUWI+jPUt+ODlzlrdgcKwsmrAlwz1AJO5dAE2vpxBbKu6ZjvqraEWVQ2xDW/4kkcyN2fIQI/IRJ93Z0Pu2uFWEx2hcyCPsY6A/XKW5mLxOpVibVS0h038hO6Pye2iTlLY5VKSeKUksQpJYlTShKnlCROKUmcUpI4pSRxSknilJLEKSVmcRehM+AT7eJKy758pDz4IO87QLu4yrLvEp3yZnSs7rHjEfSLK3v23yM/gpawwiXyXnJuOWYN+t/Hgf2dXIy8ASrtTxzYi5XYuGNXPcTwxIGEIHwInQnPPCPRYRuIRxzEXWRuacTlxFBU1iyRYJzYeKYlmComcXU09jXhwuldc4cUj99EwMVUVDbJkacwQ9dqV3Xc5QpLPzVmcVHzL15V9Occ494XAAAAAElFTkSuQmCC" alt=""></div>
+          <span class="ses-icon-label" data-i18n="ses_c2">1분 이내 분석</span>
+        </div>
+        <div class="ses-icon-item">
+          <div class="ses-icon-circle"><img src="data:image/png;base64,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" alt=""></div>
+          <span class="ses-icon-label" data-i18n="ses_c3">미래 예측 가능</span>
+        </div>
+        <div class="ses-icon-item">
+          <div class="ses-icon-circle"><img src="data:image/png;base64,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" alt=""></div>
+          <span class="ses-icon-label" data-i18n="ses_c4">운영 중 진단 가능</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </main>
 
 <script>
@@ -1045,7 +1188,13 @@ const T = {
 단말기",
     "ss2_b3": "학생용
 단말기",
-    "ss2_b4": "무선 AP"
+    "ss2_b4": "무선 AP",
+    "ses_desc": "<strong>AI</strong> 기반 고정밀 배터리 진단 기술로 전기차 충전부터 건물 에너지장치(ESS)까지, 화재 위험 없이 더 안전하고 스마트한 친환경 라이프를 완성합니다",
+    "ses_left": "충전 데이터 패턴을 <strong>AI로 분석</strong><br>배터리 내부 상태와<br>열화 징후를 <strong>조기 진단</strong>",
+    "ses_c1": "추가 장비 불필요",
+    "ses_c2": "1분 이내 분석",
+    "ses_c3": "미래 예측 가능",
+    "ses_c4": "운영 중 진단 가능"
   },
   "en": {
     "hero_sub": "From Building to Life — Kyungdong Construction Creates a Better Tomorrow",
@@ -1096,7 +1245,13 @@ const T = {
 Device",
     "ss2_b3": "Student
 Device",
-    "ss2_b4": "Wireless AP"
+    "ss2_b4": "Wireless AP",
+    "ses_desc": "<strong>AI</strong>-based high-precision battery diagnostics — from EV charging to building ESS — for a safer, smarter eco-friendly life without fire risk",
+    "ses_left": "AI analysis of charging<br>data patterns<br><strong>Early detection</strong> of battery<br>degradation signs",
+    "ses_c1": "No Extra Equipment",
+    "ses_c2": "Analysis in 1 Min",
+    "ses_c3": "Future Prediction",
+    "ses_c4": "In-Operation Diagnosis"
   },
   "ja": {
     "hero_sub": "建物から生活へ — キョンドン建設が創るより良い明日",
@@ -1147,7 +1302,13 @@ Device",
 端末",
     "ss2_b3": "生徒用
 端末",
-    "ss2_b4": "無線AP"
+    "ss2_b4": "無線AP",
+    "ses_desc": "<strong>AI</strong>高精度バッテリー診断技術でEV充電から建物ESSまで、火災リスクなく安全でスマートな環境生活を実現します",
+    "ses_left": "充電データパターンを<strong>AIで分析</strong><br>バッテリー内部状態と<br>劣化兆候を<strong>早期診断</strong>",
+    "ses_c1": "追加機器不要",
+    "ses_c2": "1分以内に分析",
+    "ses_c3": "将来予測可能",
+    "ses_c4": "稼働中診断可能"
   },
   "zh": {
     "hero_sub": "从建筑到生活 — 경동건설创造更美好的明天",
@@ -1198,7 +1359,13 @@ Device",
 终端",
     "ss2_b3": "学生
 终端",
-    "ss2_b4": "无线AP"
+    "ss2_b4": "无线AP",
+    "ses_desc": "基于<strong>AI</strong>的高精度电池诊断技术，覆盖电动车充电到楼宇ESS，无火灾风险，打造更安全、更智能的绿色生活",
+    "ses_left": "AI分析充电数据模式<br>早期诊断电池内部<br>状态与<strong>老化迹象</strong>",
+    "ses_c1": "无需额外设备",
+    "ses_c2": "1分钟内完成分析",
+    "ses_c3": "可预测未来",
+    "ses_c4": "运行中可诊断"
   },
   "ar": {
     "hero_sub": "من البناء إلى الحياة — كيونغدونغ للبناء تصنع غداً أفضل",
@@ -1249,7 +1416,13 @@ Device",
 المعلم",
     "ss2_b3": "جهاز
 الطالب",
-    "ss2_b4": "نقطة AP"
+    "ss2_b4": "نقطة AP",
+    "ses_desc": "تقنية تشخيص بطاريات عالية الدقة بـ<strong>الذكاء الاصطناعي</strong> من شحن السيارات الكهربائية إلى ESS المباني، لحياة أكثر أماناً وذكاءً وصداقة للبيئة",
+    "ses_left": "تحليل أنماط بيانات الشحن<br>بالذكاء الاصطناعي<br><strong>تشخيص مبكر</strong> لتدهور البطارية",
+    "ses_c1": "لا معدات إضافية",
+    "ses_c2": "تحليل في دقيقة",
+    "ses_c3": "التنبؤ بالمستقبل",
+    "ses_c4": "تشخيص أثناء التشغيل"
   },
   "es": {
     "hero_sub": "Del edificio a la vida — Kyungdong Construction crea un mejor mañana",
@@ -1300,7 +1473,13 @@ Device",
 Docente",
     "ss2_b3": "Dispositivo
 Estudiante",
-    "ss2_b4": "AP Inalámbrico"
+    "ss2_b4": "AP Inalámbrico",
+    "ses_desc": "Diagnóstico de baterías de alta precisión con <strong>IA</strong> — desde EV hasta ESS — para una vida más segura, inteligente y ecológica sin riesgo de incendio",
+    "ses_left": "Análisis de patrones de carga<br>con IA — <strong>diagnóstico temprano</strong><br>de degradación de batería",
+    "ses_c1": "Sin equipo adicional",
+    "ses_c2": "Análisis en 1 min",
+    "ses_c3": "Predicción futura",
+    "ses_c4": "Diagnóstico en operación"
   },
   "fr": {
     "hero_sub": "Du bâtiment à la vie — Kyungdong Construction crée un meilleur demain",
@@ -1351,7 +1530,13 @@ Estudiante",
 Enseignant",
     "ss2_b3": "Terminal
 Élève",
-    "ss2_b4": "Point AP"
+    "ss2_b4": "Point AP",
+    "ses_desc": "Diagnostic de batteries haute précision par <strong>IA</strong> — de la recharge VE aux ESS — pour une vie plus sûre, intelligente et écologique sans risque d'incendie",
+    "ses_left": "Analyse des patterns de charge<br>par IA — <strong>diagnostic précoce</strong><br>de dégradation des batteries",
+    "ses_c1": "Sans équipement sup.",
+    "ses_c2": "Analyse en 1 min",
+    "ses_c3": "Prédiction future",
+    "ses_c4": "Diagnostic en marche"
   }
 };
 
