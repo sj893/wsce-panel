@@ -184,7 +184,6 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
 }
 
 
-
 /* ── Smart Housing 섹션 ── */
 .sh-section {
   margin-top: 0;
@@ -192,9 +191,8 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
 .sh-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: stretch;
-  min-height: 600px;
+  gap: 40px;
+  align-items: start;
 }
 @media(max-width: 680px) {
   .sh-layout { grid-template-columns: 1fr; }
@@ -206,10 +204,8 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
 }
 .sh-apt-wrap img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  border-radius: 4px;
   display: block;
-  border-radius: 4px 0 0 4px;
 }
 .sh-apt-caption {
   font-size: 15px;
@@ -218,109 +214,80 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
   margin-top: 10px;
 }
 
-/* 오른쪽 */
-.sh-right {
-  display: flex;
-  flex-direction: column;
-  padding-left: 32px;
-}
-
-/* 필 카드 */
+/* 오른쪽: 기능 카드들 */
 .sh-features {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 20px;
+  gap: 16px;
 }
+
+/* 필 카드 */
 .sh-pill {
   border: 1.5px solid #c8d8e8;
   border-radius: 60px;
-  padding: 12px 20px;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   background: white;
 }
 .sh-pill.reverse {
   flex-direction: row-reverse;
-  text-align: right;
 }
 .sh-icon-circle {
-  width: 64px; height: 64px;
+  width: 72px; height: 72px;
   border-radius: 50%;
-  background: #7fa8c4;
+  background: #8aafc8;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  padding: 14px;
 }
-.sh-icon-circle img {
-  width: 100%; height: 100%;
-  object-fit: contain;
+.sh-icon-circle svg {
+  width: 36px; height: 36px;
 }
 .sh-pill-text { flex: 1; }
 .sh-pill-title {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 900;
   color: #1a3a6e;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   letter-spacing: -0.3px;
 }
 .sh-pill-desc {
-  font-size: 12.5px;
+  font-size: 13px;
   color: #444;
   line-height: 1.6;
 }
 
-/* 하단: 평면도 + 기기 겹치기 */
+/* 하단: 평면도 + 기기 */
 .sh-bottom {
-  position: relative;
-  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 8px;
 }
-.sh-floor-img {
-  width: 70%;
-  display: block;
+.sh-floor { flex: 1; }
+.sh-floor img { width: 100%; display: block; }
+.sh-devices {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
 }
-.sh-speaker {
-  position: absolute;
-  top: -30px;
-  right: 70px;
-  width: 80px;
-}
-.sh-pad {
-  position: absolute;
-  top: -20px;
-  right: 0px;
-  width: 60px;
-}
-/* 점선 (speaker → floor) */
-.sh-dot-line {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  right: 80px;
-  border-top: 2px dashed #7fa8c4;
-}
-.sh-dot-line2 {
-  position: absolute;
-  top: 30px;
-  left: 60%;
-  right: 30px;
-  border-top: 2px dashed #7fa8c4;
-}
+.sh-devices img { height: 90px; object-fit: contain; }
 
+/* AI 스마트홈 타이틀 */
 .sh-ai-title {
-  font-size: clamp(28px, 4vw, 46px);
+  font-size: clamp(28px, 4vw, 44px);
   font-weight: 900;
   color: #1a4fa0;
   text-align: right;
-  margin-top: 14px;
+  margin-top: 16px;
   font-family: 'Inter', sans-serif;
   letter-spacing: -1px;
 }
 .sh-divider {
   height: 2px;
   background: #c8d8e8;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 /* ── 섹션 제목 ── */
