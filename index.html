@@ -40,6 +40,35 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
 /* ── Main ── */
 .main { max-width: 960px; margin: 0 auto; padding: 48px 20px 80px; }
 
+/* ── Planning & Analysis 타이틀 카드 ── */
+.planning-title-card {
+  background: #2a5bbf;
+  border-radius: 8px;
+  padding: 48px 40px 40px 40px;
+  margin-bottom: 48px;
+  position: relative;
+  aspect-ratio: 4/3;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.planning-title-main {
+  font-size: clamp(40px, 7vw, 68px);
+  font-weight: 900;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+.planning-title-sub {
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 700;
+  color: white;
+  text-align: right;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
 /* ── 섹션 제목 ── */
 .section-label {
   font-size: clamp(24px, 4vw, 38px);
@@ -199,6 +228,12 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
 
 <!-- Main -->
 <main class="main">
+
+  <!-- Planning & Analysis 타이틀 카드 -->
+  <div class="planning-title-card">
+    <div class="planning-title-main">Planning<br>&amp;<br>Analysis</div>
+    <div class="planning-title-sub">기획·검토</div>
+  </div>
 
   <h2 class="section-label">AI 초기설계 검토</h2>
   <div class="divider"></div>
