@@ -57,7 +57,7 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
 [data-i18n] { transition: opacity .2s ease; }
 
 /* ── Main ── */
-.main { max-width: 960px; margin: 0 auto; padding: 48px 20px 80px; }
+.main { max-width: 960px; margin: 0 auto; padding: 48px 20px 80px; overflow: visible; }
 
 /* ── Planning & Analysis 타이틀 카드 ── */
 .planning-title-card {
@@ -715,15 +715,10 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
 /* ── AI 대시보드 섹션 ── */
 .db-section {
   margin-top: 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border-radius: 16px;
-  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
-@media(max-width: 640px) { .db-section { grid-template-columns: 1fr; } }
-
-/* 왼쪽: 파란 배경 */
 .db-left {
   background: #5b8fc9;
   padding: 36px 32px;
@@ -731,6 +726,27 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
   flex-direction: column;
   justify-content: center;
   gap: 32px;
+  border-radius: 16px;
+  flex: 1;
+  z-index: 1;
+  padding-right: 30%;
+}
+.db-right {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52%;
+  z-index: 2;
+}
+.db-laptop {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.18));
+}
+@media(max-width: 640px) {
+  .db-right { position: static; transform: none; width: 100%; margin-top: 16px; }
+  .db-section { flex-direction: column; }
 }
 .db-sub {
   font-size: 14px;
@@ -779,19 +795,6 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
   line-height: 1.4;
 }
 
-/* 오른쪽: 노트북 */
-.db-right {
-  background: #d8e8f4;
-  padding: 24px 16px 0 16px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-.db-laptop {
-  width: 100%;
-  max-width: 480px;
-  display: block;
-}
 
 /* ── 섹션 제목 ── */
 .section-label {
