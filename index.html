@@ -196,10 +196,12 @@ body { font-family: 'Noto Sans KR', sans-serif; background: #f2f5fb; }
 
 @media(max-width: 600px) {
   .bim-center { grid-template-columns: 1fr; }
-  .bim-labels-left, .bim-labels-right { flex-direction: row; flex-wrap: wrap; align-items: flex-start; justify-content: center; }
+  .bim-labels-left { order: 3; flex-direction: row; flex-wrap: wrap; align-items: flex-start; justify-content: center; }
+  .bim-labels-right { order: 2; flex-direction: row; flex-wrap: wrap; align-items: flex-start; justify-content: center; }
+  .bim-building { order: 1; }
   .bim-label.left::after, .bim-label.right::before { display: none; }
   .bim-circle { width: 88px; height: 88px; font-size: 12px; }
-  .bim-circle.active { width: 96px; height: 96px; }
+  .bim-circle.active { width: 88px; height: 88px; font-size: 12px; }
 }
 
 
